@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Page</title>
+    
+    <!-- Importing Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Importing Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .skip-nav {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #f5f5f5;
+            padding: 5px;
+            z-index: 1000;
+        }
+
+        .skip-nav:focus {
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip navigation dropdown -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+    <header>
+        <h1>Welcome to the Accessible Page</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <article>
+            <h2>About Web Accessibility</h2>
+            <p>Web accessibility ensures that websites, tools, and technologies are designed and developed so that people with disabilities can use them.</p>
+        </article>
+
+        <!-- Accessible Form -->
+        <section>
+            <h2>Contact Us</h2>
+            <form action="#">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required aria-required="true">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required aria-required="true">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Accessible Data Table -->
+        <section>
+            <h2>Data Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apple</td>
+                        <td>Fresh red apple</td>
+                        <td>$0.50</td>
+                    </tr>
+                    <tr>
+                        <td>Banana</td>
+                        <td>Yellow ripe banana</td>
+                        <td>$0.30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Useful Links</h2>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="material-icons" aria-hidden="true">home</i> Link 1
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons" aria-hidden="true">settings</i> Link 2
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Accessible Web, All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
