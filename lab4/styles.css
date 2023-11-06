@@ -1,22 +1,28 @@
-/* Importing Google Fonts */
+/* Henock Zemenfes */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
 
-/* Adobe Color Scheme - Replace with actual colors from Adobe Color */
+
 :root {
-    --primary-color: #005b96;   /* A strong blue for primary actions */
-    --secondary-color: #ffd700; /* A warm yellow for accents */
-    --text-color: #333333;      /* A dark grey for text */
-    --background-color: #f0f0f0; /* A light grey for backgrounds */
-    --footer-background: #e1e1e1; /* Slightly darker grey for the footer */
+    --primary-color: #5D535E;  
+    --secondary-color: #DFDCE3;
+    --accent-color: #E4B7E5;   
+    --text-color: #333333;     
+    --background-color: #FAF1FF;
+    --footer-background: #BFA4C0; 
 }
 
-/* Base Styles */
+
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     color: var(--text-color);
     background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
+    line-height: 1.6;
 }
 
 h1, h2, h3 {
@@ -24,7 +30,7 @@ h1, h2, h3 {
 }
 
 a {
-    color: var(--primary-color);
+    color: var(--accent-color);
     text-decoration: none;
 }
 
@@ -32,76 +38,109 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Layout Styles */
-header, nav, main, aside, footer {
-    padding: 20px;
-    margin: 10px;
-}
 
-header {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-footer {
-    background-color: var(--footer-background);
-    text-align: center;
-}
-
-/* Grid Layout */
-body {
+.container {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: auto;
-    gap: 20px;
     grid-template-areas:
         "header header header"
-        "nav    main   aside1"
-        "nav    main   aside2"
+        "nav main aside1"
+        "nav main aside2"
         "footer footer footer";
+    gap: 20px;
+    padding: 20px;
 }
 
 header {
     grid-area: header;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
 }
 
 nav {
     grid-area: nav;
 }
 
-main {
-    grid-area: main;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    justify-content: center;
 }
 
-.aside1 {
+nav li a {
+    padding: 0.5rem 1rem;
+}
+
+main {
+    grid-area: main;
+    background-color: var(--secondary-color);
+}
+
+aside.aside1 {
     grid-area: aside1;
     background-color: var(--secondary-color);
 }
 
-.aside2 {
+aside.aside2 {
     grid-area: aside2;
     background-color: var(--secondary-color);
 }
 
 footer {
     grid-area: footer;
+    background-color: var(--footer-background);
+    color: white;
+    text-align: center;
+    padding: 1rem;
 }
 
-/* Flexbox for Navigation */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-    background-color: var(--primary-color);
-    margin: 0;
-}
 
-nav li {
-    padding: 10px;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    body {
-        grid-template
+    .container {
+        grid-template-columns: 1fr; /* Stack the columns */
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside1"
+            "aside2"
+            "footer";
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px 0; /* Space out the nav items */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li a {
+        display: block;
+        width: 100%; /* Full width */
+        text-align: center;
+    }
+
+
+    nav li a {
+        padding: 10px;
+        margin: 2px 0; /* Slightly space out items */
+    }
+
+   
+    aside.aside1, aside.aside2 {
+        display: none;
+    }
+}
