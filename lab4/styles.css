@@ -1,16 +1,57 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #F2F4F4; 
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Adobe Color Scheme - Replace with actual colors from Adobe Color */
+:root {
+    --primary-color: #005b96;   /* A strong blue for primary actions */
+    --secondary-color: #ffd700; /* A warm yellow for accents */
+    --text-color: #333333;      /* A dark grey for text */
+    --background-color: #f0f0f0; /* A light grey for backgrounds */
+    --footer-background: #e1e1e1; /* Slightly darker grey for the footer */
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* Base Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
     font-family: 'Roboto', sans-serif;
 }
 
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
 
+a:hover {
+    text-decoration: underline;
+}
+
+/* Layout Styles */
+header, nav, main, aside, footer {
+    padding: 20px;
+    margin: 10px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+footer {
+    background-color: var(--footer-background);
+    text-align: center;
+}
+
+/* Grid Layout */
 body {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: auto;
     gap: 20px;
     grid-template-areas:
@@ -34,10 +75,12 @@ main {
 
 .aside1 {
     grid-area: aside1;
+    background-color: var(--secondary-color);
 }
 
 .aside2 {
     grid-area: aside2;
+    background-color: var(--secondary-color);
 }
 
 footer {
@@ -46,58 +89,19 @@ footer {
 
 /* Flexbox for Navigation */
 nav ul {
-    display: flex;
     list-style-type: none;
     padding: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--primary-color);
+    margin: 0;
 }
 
 nav li {
-    margin-right: 20px;
+    padding: 10px;
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #007ACC; 
-}
-
-
+/* Responsive Design */
 @media (max-width: 768px) {
     body {
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas:
-            "header header"
-            "nav    main"
-            "aside1 main"
-            "aside2 main"
-            "footer footer";
-    }
-    nav ul {
-        flex-direction: column;
-    }
-}
-
-/* For mobile devices */
-@media (max-width: 480px) {
-    body {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "nav"
-            "main"
-            "aside1"
-            "aside2"
-            "footer";
-    }
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    nav li {
-        margin-bottom: 10px;
-    }
-}
+        grid-template
