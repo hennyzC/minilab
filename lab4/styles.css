@@ -1,109 +1,154 @@
 /* Henock Zemenfes */
 
-/* Adobe Color Scheme */
+
 :root {
-    --color-primary: #05668D; 
-    --color-secondary: #02C39A; 
-    --color-accent: #F0F3BD; 
-    --color-dark: #50514F; 
-    --color-light: #ECECEC; 
+    --color-primary: #005A9C; 
+    --color-secondary: #E1F4F3; 
+    --color-text: #333333; 
+    --color-accent: #FFD166;
+    --color-background: #FAFAFA; 
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;700&display=swap');
 
-body {
-    font-family: 'Lato', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: var(--color-light);
-    color: var(--color-dark);
 }
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
 
 .container {
     display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
-        'header'
-        'nav'
-        'main'
-        'aside1'
-        'aside2'
-        'footer';
-    gap: 10px;
+        "header header"
+        "nav main"
+        "aside1 aside2"
+        "footer footer";
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+header {
+    grid-area: header;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
+nav {
+    grid-area: nav;
     padding: 20px;
 }
 
-header, nav, main, .aside1, .aside2, footer {
-    padding: 15px;
-    background-color: var(--color-secondary);
-    color: var(--color-accent);
-}
-
-header {
-    background-color: var(--color-primary);
-    color: var(--color-light);
-}
-
 nav ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: none;
     display: flex;
-    justify-content: space-around;
-    background-color: var(--color-dark);
-    margin-bottom: 10px;
+    gap: 10px;
 }
 
 nav ul li a {
-    color: var(--color-light);
     text-decoration: none;
-    padding: 10px;
+    color: var(--color-primary);
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
+    color: white;
 }
+
+
+main {
+    grid-area: main;
+    padding: 20px;
+    background-color: var(--color-secondary);
+}
+
+
+.aside1, .aside2 {
+    padding: 20px;
+    background-color: var(--color-secondary);
+}
+
+.aside1 {
+    grid-area: aside1;
+}
+
+.aside2 {
+    grid-area: aside2;
+}
+
 
 footer {
-    background-color: var(--color-dark);
-    color: var(--color-accent);
+    grid-area: footer;
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
 
-/* Responsive adjustments for tablets */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
 
-    nav ul li {
-        text-align: center;
-        padding: 10px;
-    }
-}
-
-/* Responsive adjustments for mobile phones */
-@media (max-width: 480px) {
+@media screen and (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside1"
+            "aside2"
+            "footer";
     }
 
     nav ul {
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        padding: 0;
     }
 
     nav ul li a {
         width: 100%;
-        padding: 10px;
         text-align: center;
     }
 
-
     nav ul li a {
-        margin: 5px 0;
-    }
-
-
-    .aside1, .aside2 {
         padding: 10px;
-        font-size: 0.8em; /* Adjust font size */
     }
+}
+
+
+a:focus {
+    outline: 3px dashed var(--color-accent);
+    outline-offset: 3px;
+}
+
+
+button:hover,
+a:hover {
+    opacity: 0.8;
 }
