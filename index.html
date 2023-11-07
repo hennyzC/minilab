@@ -6,22 +6,20 @@
     <title>Henock Zemenfes' Class Portal</title>
     <style>
         body {
-            font-family: 'Times New Roman', sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #fff; /* Ensuring the background is white for better contrast */
             margin: 0;
             padding: 0;
         }
         a {
             color: #0056b3;
+            text-decoration: none;
         }
-        a:hover {
+        a:hover, a:focus {
             color: #004494;
-        }
-        a:focus,
-        a:active {
-            outline: none;
-            border-bottom: 2px solid #004494;
+            text-decoration: underline;
         }
         .skip-link {
             position: absolute;
@@ -31,12 +29,13 @@
             color: white;
             padding: 8px;
             z-index: 100;
+            transition: top 0.3s;
         }
         .skip-link:focus {
             top: 0;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #005a9c; /* Darker shade for better contrast */
             color: white;
             padding: 20px;
             text-align: center;
@@ -49,7 +48,6 @@
         }
         nav a {
             margin: 0 10px;
-            text-decoration: none;
             padding: 5px 10px;
             border: 1px solid transparent;
         }
@@ -89,21 +87,22 @@
     <main id="maincontent">
         <section id="about-me">
             <h2>About Me</h2>
-            <img src="avatar.jpg" alt="Henock Zemenfes' avatar" style="width:100px; height:auto; border-radius:50%;">
+            <img src="avatar.jpg" alt="Henock Zemenfes posing" style="width:100px; height:auto; border-radius:50%;">
             <p>My name is Henock Zemenfes. I am an African-American student attending CU Boulder as a CS student. In my free time, I enjoy playing basketball and hanging out with friends.</p>
         </section>
 
         <section id="coding-projects">
             <h2>Coding Assignments</h2>
-            <nav aria-label="Coding assignments">
+            <nav aria-label="Coding assignments navigation">
                 <a href="wiki.html" id="assignment1">Lab #2 - Coding & Posting a Web Page - The Basics</a>
                 <a href="lab3.html" id="assignment2">Lab #3 - Tables, Forms, Tabbed Browsing, and Screen Reading</a>
                 <a href="lab4/lab4index.html" id="assignment3">Lab #4 - Accessible CSS Layout</a>
             </nav>
         </section>
     </main>
+
     <footer>
-        <p>Henock Zemenfes' Class Portal</p>
+        <p>&copy; 2023 Henock Zemenfes' Class Portal</p>
     </footer>
 
 </body>
