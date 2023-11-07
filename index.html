@@ -2,49 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Henock Zemenfes' Class Portal</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #0056b3;
+        }
+        a:hover {
+            color: #004494;
+        }
+        a:focus,
+        a:active {
+            outline: none;
+            border-bottom: 2px solid #004494;
+        }
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+        }
+        .skip-link:focus {
+            top: 0;
         }
         header {
-            background-color: #f1f1f1;
+            background-color: #4CAF50;
+            color: white;
             padding: 20px;
             text-align: center;
         }
         nav {
-            text-align: center;
-            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #e8e8e8;
         }
         nav a {
-            margin: 0 15px;
+            margin: 0 10px;
             text-decoration: none;
-            color: blue;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
         }
         section {
+            flex: 0 1 300px;
             margin: 20px;
             padding: 20px;
             border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+        @media screen and (max-width: 600px) {
+            nav, main {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
 
+    <a href="#maincontent" class="skip-link">Skip to main content</a>
+
     <header>
         <h1>Henock Zemenfes' Class Portal</h1>
     </header>
 
-    <section id="about-me">
-        <h2>About Me</h2>
-        <p>My name is Henock Zemenfes. I am an African-American student attending CU Boulder as a CS student. In my free time, I enjoy playing basketball and hanging out with friends.</p>
-    </section>
+    <main id="maincontent">
+        <section id="about-me">
+            <h2>About Me</h2>
+            <img src="avatar.jpg" alt="Henock Zemenfes' avatar" style="width:100px; height:auto; border-radius:50%;">
+            <p>My name is Henock Zemenfes. I am an African-American student attending CU Boulder as a CS student. In my free time, I enjoy playing basketball and hanging out with friends.</p>
+        </section>
 
-    <nav>
-        <h2>Coding Assignments</h2>
-        <a href="wiki.html" id="assignment1">Lab 2</a>
-        <a href="lab3.html" id="assignment2">Lab 3</a>
-        <a href="lab4/lab4index.html" id="assignment3">Lab 4</a>
-    </nav>
+        <section id="coding-projects">
+            <h2>Coding Assignments</h2>
+            <nav aria-label="Coding assignments">
+                <a href="wiki.html" id="assignment1">Lab #2 - Coding & Posting a Web Page - The Basics</a>
+                <a href="lab3.html" id="assignment2">Lab #3 - Tables, Forms, Tabbed Browsing, and Screen Reading</a>
+                <a href="lab4/lab4index.html" id="assignment3">Lab #4 - Accessible CSS Layout</a>
+            </nav>
+        </section>
+    </main>
+    <footer>
+        <p>Henock Zemenfes' Class Portal</p>
+    </footer>
 
 </body>
 </html>
