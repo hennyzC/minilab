@@ -5,6 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next Gen Universal Design</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #005a9c;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header .logo a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        #hero {
+            background: url('hero-background.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        #hero h2 {
+            font-size: 2em;
+        }
+        .section-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .read-more {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .social-media-links img {
+            width: 24px;
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,33 +87,33 @@
 
     <main>
         <section id="hero">
-            <div class="interactive-timeline">
-                <h2>Explore the Evolution of Web Design</h2>
-                <!-- Interactive timeline content -->
-            </div>
+            <h2>Explore the Evolution of Web Design</h2>
+            <!-- Interactive timeline content -->
         </section>
 
-        <section id="introduction">
+        <section id="introduction" class="section-content">
             <h2>Shaping the Future of the Web</h2>
             <p>Discover how universal design is playing a crucial role in creating an inclusive digital world. Join us in exploring the principles and practices that make the web accessible to everyone.</p>
         </section>
 
-        <section id="why">
+        <section id="why" class="section-content">
             <h3>Why Universal Design Matters</h3>
             <p>Understand the significance of universal design in today's digital landscape.</p>
             <a href="why.html" class="read-more">Learn more</a>
         </section>
 
-        <section id="what">
+        <section id="what" class="section-content">
             <h3>What is Universal Design</h3>
             <p>Explore the core principles and elements that define universal design.</p>
             <a href="what.html" class="read-more">Learn more</a>
         </section>
 
-        <section id="how">
+        <section id="how" class="section-content">
             <h3>Implementing Universal Design</h3>
             <p>Get practical guidance on how to incorporate universal design into your projects.</p>
             <a href="how.html" class="read-more">Learn more</a>
         </section>
+
+  
 </body>
 </html>
