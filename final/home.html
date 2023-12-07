@@ -50,14 +50,21 @@
             text-align: center;
         }
         .read-more {
-            display: inline-block;
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
+        display: inline-block;
+        background-color: #005a9c; /* Darker blue for better contrast */
+        color: #ffffff; /* White text for high contrast */
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
         }
+    
+        .read-more:hover, .read-more:focus {
+        background-color: #003d73; /* Slightly darker on hover/focus for interactive feedback */
+        color: #ffffff;
+        }
+
         footer {
             background-color: #333;
             color: white;
